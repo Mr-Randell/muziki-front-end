@@ -2,18 +2,21 @@ import React from 'react'
 import {Link } from 'react-router-dom'
 import { dispatch } from 'rxjs/internal/observable/pairs';
 
-import {playerSlice,setActiveSong} from '../redux/features/playerSlice'
+import {playPause,setActiveSong} from '../redux/features/playerSlice'
 import PlayPause from './PlayPause';
+import { useDispatch } from 'react-redux';
 
 const SongCard = ({song,i,isPlaying,activeSong,data}) => {
+
+  const dispatch =useDispatch();
   
-  const activeSong = "Test";
+
   const handlePauseClick=()=>{
     dispatch (playPause(false));
 
   };
   const handlePlayClick=()=>{
-    dispatch (setActiveSong({sonf,data,i}));
+    dispatch (setActiveSong({song,data,i}));
     dispatch(playPause(true));
     
   };
