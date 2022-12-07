@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link } from 'react-router-dom'
-import { dispatch } from 'rxjs/internal/observable/pairs';
+// import { dispatch } from 'rxjs/internal/observable/pairs';
 
 import {playPause,setActiveSong} from '../redux/features/playerSlice'
 import PlayPause from './PlayPause';

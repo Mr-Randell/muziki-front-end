@@ -1,12 +1,19 @@
 import React from 'react';
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Error, Loader, SongCard } from "../components";
 import { genres } from "../assets/constants";
+import { useGetGenreSongsQuery } from "../redux/services/shazamCore";
 
 const Discover = () => {
+    const { data, isFetching, error } = useGetGenreSongsQuery;
     const genreTitle = "Pop";
-  const dispatch=useDispatch();
-  const{ activeSong,isPlaying } =useSelector((state)=>state.player);
+    const dispatch=useDispatch();
+    const{ activeSong,isPlaying } =useSelector((state)=>state.player);
+
+    if (isFetching) return <Loader title="Loading Songs..." />;
+    if (error) return <Error />;
+
+    // console.log(data);
   return (
     // latest code content for Discover
     <div className="flex flex-col">
@@ -23,7 +30,8 @@ const Discover = () => {
         </select>
       </div>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8 text-white">
-        { [1,2,3,4,5,6,7,8,9,10].map( ( song, i ) => ( 
+        {/* add in 'data?' instead of the dummy array data after endpoint has been confirmed */}
+        { data?.map( ( song, i ) => ( 
             <SongCard 
                 key={ song.key }
                 song={ song }
