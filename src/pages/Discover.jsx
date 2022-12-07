@@ -22,7 +22,7 @@ const Discover = () => {
        // data ={data}
         />
       ))}
-
+    </div>  
     if (isFetching) return <Loader title="Loading Songs..." />;
     if (error) return <Error />;
 
