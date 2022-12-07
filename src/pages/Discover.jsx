@@ -5,6 +5,8 @@ import { genres } from "../assets/constants";
 
 const Discover = () => {
     const genreTitle = "Pop";
+  const dispatch=useDispatch();
+  const{ activeSong,isPlaying } =useSelector((state)=>state.player);
   return (
     // latest code content for Discover
     <div className="flex flex-col">
@@ -25,6 +27,8 @@ const Discover = () => {
             <SongCard 
                 key={ song.key }
                 song={ song }
+                isPlaying={isPlaying}
+                activeSong={activeSong}
                 i={ i }
             />
          ) ) }
