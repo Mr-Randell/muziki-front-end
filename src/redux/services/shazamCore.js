@@ -16,17 +16,17 @@ export const shazamCoreApi = createApi({
     reducerPath: "shazamCoreApi",
     baseQuery: fetchBaseQuery({ 
         baseUrl: "http://localhost:3000",
-        prepareHeader: (headers) => {
-            headers.set( "Content-Type", "Application/json" );
+        prepareHeaders: (headers) => {
+            headers.set( "Content-Type", "application/json" );
             return headers;
         },
     }),
     endpoints: ( builder ) => ({ 
         // all endpoints go here
-        getGenreSongs: builder.query({ query: () => "/genre/:1/songs" }),
-     })
+        getSongs: builder.query({ query: () => "/songs" }),
+    }),
 });
 
 export const { 
-    useGetGenreSongsQuery,
+    useGetSongsQuery,
 } = shazamCoreApi;
