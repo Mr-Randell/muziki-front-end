@@ -26,11 +26,13 @@ export const shazamCoreApi = createApi({
     endpoints: ( builder ) => ({ 
         // all endpoints go here
         getSongs: builder.query({ query: () => "/songs" }),
+        getSongsBySearch: builder.query({ query: (searchTerm) => `/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}` }),
         // getTopCharts: builder.query({ query: () => "/charts/world" }),
     }),
 });
 
 export const { 
     useGetSongsQuery,
+    useGetSongsBySearchQuery,
     // useGetTopChartsQuery,
 } = shazamCoreApi;
