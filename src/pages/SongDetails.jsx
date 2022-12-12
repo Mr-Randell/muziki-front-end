@@ -7,11 +7,12 @@ import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/service
 
 
 const SongDetails = () => {
-  const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery( songid );
-  const { data, isFetching: isFetchingRelatedSongs, error } = useGetSongRelatedQuery( {songid} );
+  const { song_id, id: artistId } = useParams();
   const dispatch = useDispatch();
-  const { songid } = useParams();
   const { activeSong, isPlaying } = useSelector( (state) => state.player );
+  const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery( song_id );
+  const { data, isFetching: isFetchingRelatedSongs, error } = useGetSongRelatedQuery( {song_id} );
+  // console.log(songData);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -28,8 +29,9 @@ const SongDetails = () => {
   return (
     <div className="flex flex-col">
       <DetailsHeader 
-        artistId = ""
-        songData = { songData }
+        // artistId = {artistId}
+        // songData = { songData }
+        // artistData = { artistData }
       />
       <div className="mb-10">
         <h2 className="text-white text-3xl font-bold">
@@ -45,6 +47,7 @@ const SongDetails = () => {
       </div>
       <RelatedSongs 
         data = { data }
+        artistId = {artistId}
         activeSong = { activeSong }
         isPlaying = { isPlaying }
         handlePauseClick = { handlePauseClick }
