@@ -5,9 +5,9 @@ import { genres } from "../assets/constants";
 import { useGetSongsQuery } from "../redux/services/shazamCore";
 
 const Discover = () => {
+  const dispatch=useDispatch();
     const { data, isFetching, error } = useGetSongsQuery();
     const genreTitle = "Pop";
-    const dispatch=useDispatch();
     const{ activeSong,isPlaying } =useSelector((state)=>state.player);
     // console.log(data);
 

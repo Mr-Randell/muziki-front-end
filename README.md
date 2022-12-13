@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Phase 4 Final Project : Muziki App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## N/B: MOst commits were made to the DEVELOP branch for the purpose of error control such that final approved version is merged into the main branch
 
-## Available Scripts
+## Focus 🎯
+Building a MUSIC APP API backend that uses Active Record to access and persist data in a database, which will be used by a separate React frontend that interacts with the database via the API.
 
-In the project directory, you can run:
+## Learning Goals 👨‍🚀
 
-### `npm start`
+- Interact with a database to feed data into the components.
+- Have a minimum of Four models with a one-to-many relationship.
+- Create API routes in Ruby on Rails that handles at least Four different CRUD actions for at least one of your Active Record models.
+- Build a separate React frontend application that interacts with the API to perform CRUD actions.
+- Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Back-End Repo
+View [LIVE](https://github.com/Mr-Randell/muziki-back-end):
 
-### `npm run build`
+## Backend Setup ✴️
+- [x] cd into muziki-front-end folder and run `npm install` from your terminal which will install all the dependencies 
+- [x] Finally run `npm start` to keep your frontend running on `http://127.0.0.1:3001` :boom:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Endpoints API 🛠️
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Your base URL API for storing songs in SQLite: `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Core Deliverables 📈
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+As a user 👨‍💻, I can:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `C`reate playlist, songs
+- `R`ead songs, playslist, artists
+- `U`pdate playlist, songs, password,
+- `D`elete playlist
+- Search for playlist, songs, artist using search input 👍
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors 🖊️
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project was contributed to by:
 
-## Learn More
+- [Kevin Lomenen](https://github.com/kevin-lomenen) Backend Developer
+- [Randell Hera](https://github.com/Mr-Randell) Frontend Developer, Scrum Master
+- [Denis Muturi](https://github.com/dennismuturi) Backend Developer\
+- [Alex Karumbi](https://github.com/alexkarumbi) Frontend Developer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License 📄
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is licensed under MIT

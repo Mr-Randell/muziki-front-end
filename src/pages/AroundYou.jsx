@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Error, Loader, SongCard } from "../components";
-import { setActiveSong } from '../redux/features/playerSlice';
+// import { setActiveSong } from '../redux/features/playerSlice';
+import { useGetSongsByCountryQuery } from '../redux/services/shazamCore';
 
-const AroundYou = () => {
+const CountryTracks = () => {
   useState [country, setCountry] = useState("");
   useState [loading, setLoading] = useState(true);
-  const { setActiveSong, isPlaying } = useSelector( (state) => state.player );
+  const { activeSong, isPlaying } = useSelector( (state) => state.player );
+  const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
   console.log(country);
 
   useEffect( () => { 
     // at_btRwPZOzde0xOe16hEoQXuyLnIWRA
-    axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_btRwPZOzde0xOe16hEoQXuyLnIWRA`)
+    axios
+    .get(`https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_GEO_API_KEY}`)
     .then( (res) => setCountry( res?.data?.location?.country ) )
     .catch( (err) => console.log(err) )
     .finally( () => setLoading(false) );
@@ -43,4 +46,4 @@ const AroundYou = () => {
   );
 };
 
-export default AroundYou
+export default CountryTracks

@@ -13,5 +13,5 @@ export {
     SongDetails,
     Search,
     TopCharts,
-    AroundYou
+    AroundYou,
 };
