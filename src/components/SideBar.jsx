@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { RiCloseLine } from "react-icons/ri";
 // import { logo } from "../assets";
