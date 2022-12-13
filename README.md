@@ -1,6 +1,8 @@
 # Phase 4 Final Project : Muziki App
 
-## N/B: MOst commits were made to the DEVELOP branch for the purpose of error control such that final approved version is merged into the main branch
+![Muziki-app](/public/muziki.png "Muziki-app")
+
+## N/B: Most commits were made to the 'DEVELOP' branch for the purpose of error control such that final approved version is merged into the main branch
 
 ## Focus 🎯
 Building a MUSIC APP API backend that uses Active Record to access and persist data in a database, which will be used by a separate React frontend that interacts with the database via the API.
